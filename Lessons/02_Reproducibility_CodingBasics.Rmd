@@ -6,6 +6,7 @@ date: "Fall 2022"
 output: pdf_document
 ---
 
+
 ## Objectives
 
 1.  Discuss the benefits and approach for reproducible data analysis

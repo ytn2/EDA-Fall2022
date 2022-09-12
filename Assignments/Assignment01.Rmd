@@ -1,0 +1,30 @@
+---
+title: "Assignment01"
+author: "Yosia Theo Napitupulu"
+date: "2022-09-10"
+output: pdf_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+### My Git settings:
+user.name=ytn2
+user.email=yosia.napitupulu@duke.edu
+
+### My Git remote settings:
+origin  https://github.com/ytn2/EDA-Fall2022 (fetch)
+origin  https://github.com/ytn2/EDA-Fall2022 (push)
+upstream        https://github.com/ENV872/EDA-Fall2022 (fetch)
+upstream        DISABLE (push)
+
+### My Git changes
+2ce183d (HEAD -> main, origin/main, origin/HEAD) day 1
+2342d5a Create 02_Reproducibility_CodingBasics.Rmd
+d74b397 Adds 01_gitExercise.pdf
+20a7b70 Add data files
+f992081 Create Assignments folder
+972c063 Create Lessons folder
+34b6cc8 Create .gitignore
+a07d95c Initial commit
