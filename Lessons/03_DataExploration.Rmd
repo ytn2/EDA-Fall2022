@@ -33,7 +33,7 @@ If your working directory is not set to the folder you want, you have several op
 
 ```{r Setting the working directory }
 # Absolute file path is commented out
-setwd("/home/guest/EDA-Fall2022")
+setwd("E:/ENV872/EDA-Fall2022")
 ```
 
 You may change your working directory without coding by going to the Session menu in RStudio and navigating to the Set Working Directory tab. From there, you may select from a series of options to reset your working directory. 
@@ -75,7 +75,7 @@ library(tidyverse)
 
 Question: What happens in the console when you load a package?
 
-> Answer: 
+> Answer: it will showed in the console
 
 ### Import your datasets
 
@@ -114,7 +114,12 @@ USGS.flow.data <- read.csv("./Data/Raw/USGS_Site02085000_Flow_Raw.csv")
 ## EXPLORE YOUR DATASET
 
 Take a moment to read through the README file associated with the USGS dataset on discharge at the Eno River. Where can you find this file? How does the placement and information found in this file relate to the best practices for reproducible data analysis?
-> ANSWER: 
+> ANSWER: It can be found here: https://waterdata.usgs.gov/nwis 
+It has a complete dataset and ready to be analyzed.The Data-value qualification codes are included in this output:
+
+    A  Approved for publication -- Processing and review completed.
+    P  Provisional data subject to revision.
+    e  Value has been estimated.
 
 ```{r Exploring data}
 View(USGS.flow.data)
@@ -149,7 +154,7 @@ summary(USGS.flow.data)  #could point to column only with $
 ```
 
 What happened to blank cells in the spreadsheet when they were imported into R?
-> Answer: 
+> Answer: It will come with NAs
 
 ## Adjusting Datasets
 
@@ -163,7 +168,7 @@ summary(USGS.flow.data$gage.height.mean)
 ```
 Question: What types of research questions might make it favorable to remove NAs from a dataset, and what types of research questions might make it favorable to retain NAs in the dataset?
 
-> Answer: 
+> Answer: how to know data for gage station for river in the past. NAs in dataset is usually retained in Time series analysis.
 
 ```{r Removing NAs}
 USGS.flow.data.complete <- na.omit(USGS.flow.data)
