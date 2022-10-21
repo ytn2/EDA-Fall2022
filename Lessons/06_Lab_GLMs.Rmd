@@ -16,14 +16,15 @@ editor_options:
 
 ## Set up
 ```{r, message = FALSE}
+getwd()
 library(tidyverse)
 library(agricolae)   
 
-EPAair <- read.csv("./Data_2022sp/Processed/EPAair_O3_PM25_NC1819_Processed.csv", stringsAsFactors = TRUE)
+EPAair <- read.csv("./Data/Processed/EPAair_O3_PM25_NC1819_Processed.csv", stringsAsFactors = TRUE)
 # Set date to date format
 EPAair$Date <- as.Date(EPAair$Date, format = "%Y-%m-%d")
 
-Litter <- read.csv("./Data_2022sp/Processed/NEON_NIWO_Litter_mass_trap_Processed.csv", stringsAsFactors = TRUE)
+Litter <- read.csv("./Data/Processed/NEON_NIWO_Litter_mass_trap_Processed.csv", stringsAsFactors = TRUE)
 # Set date to date format
 Litter$collectDate <- as.Date(Litter$collectDate , format = "%Y-%m-%d")
 
@@ -59,10 +60,32 @@ For the NTL-LTER dataset, can we predict PM2.5 from Ozone?
 ```{r}
 
 #Exercise 2: Run a linear regression PM2.5 by Ozone. Find the p-value and R-squared value. 
-
-
+O3.density <- 
+  ggplot(EPAair, aes(x = Ozone, fill = as.factor(Year))) + 
+  geom_density(alpha = 0.5) + 
+  scale_fill_manual(values = c("darkgreen", "darkblue")) +
+  labs(x = "Ozone AQI value", y = "Density", fill = "")
+print(O3.density)
 
 #Exercise 3: Build a scatterplot. Add a line and standard error for the linear regression. Add the regression equation to the plot
+
+O3.boxplot <- 
+  ggplot(EPAair, aes(x = as.factor(Year), y = Ozone)) +
+  geom_boxplot() + 
+  stat_summary(geom = "text", fun = max, vjust = -1, size = 4, 
+               label = c("b", "a")) +
+  labs(x = "", y = "Ozone AQI value") + 
+  ylim(0,150)
+print(O3.boxplot)
+
+O3.violin <- 
+  ggplot(EPAair, aes(x = as.factor(Year), y = Ozone)) +
+  geom_violin(draw_quantiles = 0.5) +
+  stat_summary(geom = "text", fun = max, vjust = -1, size = 4, 
+               label = c("b", "a")) + 
+  labs(x = "", y = "Ozone AQI value") + 
+  ylim(0,150)
+print(O3.violin)
 
 
 
