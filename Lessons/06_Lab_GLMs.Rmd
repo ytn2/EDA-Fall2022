@@ -68,7 +68,7 @@ O3.density <-
   labs(x = "Ozone AQI value", y = "Density", fill = "")
 print(O3.density)
 
-PM2.5byOzone <- lm(data = EPAair$PM2.5,  ~ Ozone)
+PM2.5byOzone <- lm(data = EPAair, PM2.5  ~ Ozone)
 summary(PM2.5byOzone)
                   
                      
