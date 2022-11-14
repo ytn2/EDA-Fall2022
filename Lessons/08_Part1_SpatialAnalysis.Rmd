@@ -89,6 +89,7 @@ plot(GasPlants['status'],pch=16)
 #View using ggplot
 ggplot(data=GasPlants) + geom_sf()
 
+
 #View using mapview
 mapview(GasPlants)
 
@@ -119,7 +120,7 @@ EPAair.sf <- EPAair.sites %>%
            crs=4326)
 
 #View the data using the methods above...
-
+mapview(EPAair.sf)
 ```
 
 ### EXERCISE: Creating a spatial dataframe from known coordinates
